@@ -8,9 +8,11 @@ viewer for disparity data in npy file format
 - Optional:
   - ZED SDK 4.1 (StereoLabs)
 
-## Install in docker environment
+## Clone the repository and install in docker environment
 pip install is executed in Dockerfile.
 ```commandline
+git clone https://github.com/katsunori-waragai/disparity-view.git
+cd disparity-view
 docker_build.sh
 docker_run.sh
 
@@ -37,10 +39,10 @@ positional arguments:
 
 optional arguments:
   -h, --help       show this help message and exit
-  --vmax VMAX      max disparity [pixel]
-  --vmin VMIN      min disparity [pixel]
-  --disp3d         display 3D
-  --outdir OUTDIR  save colored or ply
+  --vmax VMAX      max disparity [pixel]，default:500
+  --vmin VMIN      min disparity [pixel]，default:0
+  --disp3d         display 3D data in an interactive viewer
+  --outdir OUTDIR  directory to save output files (e.g., png)
 
 colormap:
   --gray           gray colormap
